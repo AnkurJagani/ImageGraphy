@@ -16,6 +16,7 @@
 package com.ankur.imagegraphy;
 
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Matrix;
 import android.os.Bundle;
@@ -25,6 +26,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.button.MaterialButton;
 
 import static android.widget.ImageView.*;
 
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fitXYBtn = findViewById(R.id.fitXYBtn);
         matrixBtn = findViewById(R.id.matrixBtn);
 
+
         noneBtn.setOnClickListener(this);
         centerBtn.setOnClickListener(this);
         centerCropBtn.setOnClickListener(this);
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         matrix = new Matrix();
         matrix.postScale(0.5f, 0.5f);
         matrix.postTranslate(100, 100);
+
+        findViewById(R.id.btnAspectImage).setOnClickListener(view -> startActivity(new Intent(MainActivity.this, AspectImageActivity.class)));
     }
 
     public RadioButton getSelectedRadio(View view) {

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ImageGraphy</string>
+    <string name="str_aspect_image">Aspect Image</string>
 </resources>
